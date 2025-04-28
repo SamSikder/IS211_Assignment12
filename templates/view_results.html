@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head><title>View Results</title></head>
+<body>
+<h2>Quiz Results for {{ student.first_name }} {{ student.last_name }}</h2>
+
+{% if results %}
+<table border="1">
+<tr><th>Subject</th><th>Date</th><th>Score</th></tr>
+{% for result in results %}
+<tr>
+    <td>{{ result.subject }}</td>
+    <td>{{ result.quiz_date }}</td>
+    <td>{{ result.score }}</td>
+</tr>
+{% endfor %}
+</table>
+{% else %}
+<p>No Results</p>
+{% endif %}
+</body>
+</html>
